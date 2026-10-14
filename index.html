@@ -78,6 +78,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;color:var(--muted);f
 .pager{display:flex;gap:10px;margin:-10px 0 20px}
 .pager button{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--blue);background:transparent;color:var(--ink);font:700 1.15rem var(--font);cursor:pointer;transition:background .2s,color .2s}
 .pager button:hover{background:var(--blue);color:#0a1226}
+.certs{margin:0;padding-left:1.1em;max-width:42em}.certs li{margin:0 0 8px}.certs span{color:var(--muted)}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .hero>div>*,.hero .photo{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
 .hero>div>:nth-child(1){animation-delay:.05s}.hero>div>:nth-child(2){animation-delay:.15s}.hero>div>:nth-child(3){animation-delay:.25s}.hero>div>:nth-child(4){animation-delay:.35s}.hero .photo{animation-delay:.2s}
@@ -106,7 +107,6 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;color:var(--muted);f
 <section id="work"><div class="wrap">
  <h2>Work</h2>
  <p class="intro">Internship projects first, then what I'm building on my own. Each one says how far along it is.</p>
- <div class="pager"><button id="prev" type="button" aria-label="Previous projects">&larr;</button><button id="next" type="button" aria-label="Next projects">&rarr;</button></div>
  <div class="work">
 
   <article class="item featured">
@@ -114,7 +114,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;color:var(--muted);f
    <div>
     <a class="shot" href="https://leoclubofchautaripokhara.com/" target="_blank" rel="noopener noreferrer"><img src="leo-club.webp" alt="Home page of the Leo Club of Chautari Pokhara website, showing the club members at their 6th Charter Night" width="1400" height="658"></a>
     <h3>Leo Club of Chautari Pokhara website</h3>
-    <p>The public website for a youth service club in Pokhara, with pages for events, the team, a photo gallery, news and membership applications. Built with a Next.js frontend and a Django backend that the club's committee can manage.</p>
+    <p>The public website for a youth service club in Pokhara, with pages for events, the team, a photo gallery, news and membership applications. I contributed to it using Next.js and Django.</p>
     <div class="stack">Next.js, React, Django, REST APIs</div>
     <div class="links"><a href="https://leoclubofchautaripokhara.com/" target="_blank" rel="noopener noreferrer">Visit the live site</a></div>
    </div>
@@ -125,7 +125,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;color:var(--muted);f
    <div>
     <div class="cols"><div>
     <h3>Office Management System, mobile app</h3>
-    <p>I built the Flutter mobile app for the company's office management system. It connects to the Django backend the team had already built, so the work was reading the existing API, handling login and tokens, and turning the data into screens.</p>
+    <p>I built Flutter screens for the company's office management system mobile app. It connects to the Django backend the team had already built, so the work was reading the existing API, handling login and tokens, and turning the data into screens.</p>
     <div class="stack">Flutter, Dart, REST API integration</div>
     <div class="links"><a href="https://github.com/Neptechpal-pvt-ltd" target="_blank" rel="noopener noreferrer">Nep Tech Pal on GitHub</a></div>
     </div><figure class="shot phone"><img src="oms-app.webp" alt="Sign-in screen of the Office Management System mobile app built with Flutter" width="323" height="660" loading="lazy"></figure></div>
@@ -147,6 +147,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;color:var(--muted);f
   <article class="item">
    <div class="meta"><strong>Practice project</strong>Backend</div>
    <div>
+    <figure class="shot"><img src="event-api.webp" alt="Swagger documentation of the Event Management API showing events, organizers, registrations and token endpoints" width="903" height="1317" loading="lazy"></figure>
     <h3>Event Management API</h3>
     <p>A Django REST API I wrote to practise the basics properly: token login, serializer validation, media uploads, and API docs with Swagger and Redoc.</p>
     <div class="stack">Django REST Framework, JWT, Swagger</div>
@@ -161,7 +162,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;color:var(--muted);f
     <h3>SkillSync AI</h3>
     <p>A team project that helps a candidate see where they fall short of real job requirements. It parses a CV, generates an ATS-friendly CV from a structured profile, finds skill gaps by comparing skills with sentence embeddings and FAISS similarity search, and recommends jobs scored against the candidate's skills.</p>
     <div class="stack">Django, Django REST Framework, FastAPI, Sentence Transformers, FAISS, Gemini API</div>
-    <div class="links"><a href="https://github.com/sabinaadhikari99/Project-II" target="_blank" rel="noopener noreferrer">Project repository</a></div>
+    <div class="links"><a href="https://github.com/bhandarisatkriti/Project-II" target="_blank" rel="noopener noreferrer">Project repository</a></div>
    </div>
   </article>
 
@@ -184,7 +185,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;color:var(--muted);f
  <div class="about" style="margin-top:22px">
   <div>
    <p>I'm studying Software Engineering at Pokhara University. Backend work is what I enjoy most: designing the data, deciding who is allowed to do what, and making the rules in an app hold up when something goes wrong.</p>
-   <p>My internship put that in a team setting. I worked with Django on real APIs, helped ship a Next.js site, and built a Flutter app against a backend I hadn't written, which taught me a lot about reading someone else's API.</p>
+   <p>My internship put that in a team setting. I worked with Django on real APIs, helped ship a Next.js site, and built Flutter screens against a backend I hadn't written, which taught me a lot about reading someone else's API.</p>
   </div>
   <div>
    <p>Right now I'm learning to write automated API tests instead of checking everything by hand, and to deploy a project properly. After that, I'll finish the Flutter side of the restaurant app.</p>
@@ -204,8 +205,9 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;color:var(--muted);f
 <section id="experience"><div class="wrap">
  <h2>Experience and education</h2>
  <div style="margin-top:22px;border-top:2px solid var(--gold)">
-  <div class="role"><div class="meta">May to August 2026</div><div><h3>Backend Development Intern</h3><p class="where">Nep Tech Pal Pvt. Ltd., Pokhara</p><p>Worked on Django REST APIs, helped build the Leo Club of Chautari Pokhara website with Next.js and Django, and built the Flutter mobile app for the office management system. Tested endpoints and connected API responses to app screens.</p></div></div>
-  <div class="role"><div class="meta">Currently studying</div><div><h3>Software Engineering</h3><p class="where">Pokhara University</p><p>Degree coursework, with internship work and personal projects as practice.</p></div></div>
+  <div class="role"><div class="meta">May to August 2026</div><div><h3>Backend Development Intern</h3><p class="where">Nep Tech Pal Pvt. Ltd., Pokhara</p><p>Worked on Django REST APIs, contributed to the Leo Club of Chautari Pokhara website using Next.js and Django, and built Flutter screens for the office management system mobile app, connected to the existing Django APIs. Tested endpoints and connected API responses to app screens.</p></div></div>
+  <div class="role"><div class="meta">2022 to 2026</div><div><h3>Bachelor of Software Engineering</h3><p class="where">Pokhara University, Nepal</p><p>Degree coursework, with internship work and personal projects as practice.</p></div></div>
+  <div class="role"><div class="meta">Certifications</div><div><h3>Courses and workshops</h3><ul class="certs"><li><strong>Flutter Essentials</strong>, Des Vu Technologies <span>(3-month course, August to November 2024)</span></li><li><strong>Full Stack Web Development with Python Django</strong>, Swift Academy <span>(2-month course)</span></li><li><strong>Cloud and DevOps Technology</strong>, Pokhara University <span>(30-hour workshop)</span></li><li><strong>Security Analysis and Risk Management</strong>, Lifelong Learning course</li></ul></div></div>
  </div>
 </div></section>
 
