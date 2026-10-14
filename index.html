@@ -45,7 +45,7 @@ h2{font-size:clamp(1.7rem,3.4vw,2.3rem);letter-spacing:-.035em;line-height:1.15;
 .stack{font-size:.9rem;color:var(--muted)}
 .links{margin-top:10px;display:flex;gap:18px;flex-wrap:wrap;font-weight:700;font-size:.95rem}
 .note{background:var(--soft);border-radius:8px;padding:12px 15px;font-size:.93rem;margin:0 0 12px;max-width:40em}
-.featured h3{font-size:1.5rem}
+.featured h3{font-size:1.5rem}.shot{display:block;margin:0 0 20px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 10px 30px rgba(21,32,43,.09)}.shot img{display:block;width:100%;height:auto}.shot.phone{margin:0;max-width:230px;justify-self:end}.cols{display:grid;grid-template-columns:1fr 230px;gap:30px;align-items:start}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 .about p{margin:0 0 14px}
 .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
@@ -60,14 +60,24 @@ h2{font-size:clamp(1.7rem,3.4vw,2.3rem);letter-spacing:-.035em;line-height:1.15;
 .contact p{max-width:34em;margin:0 0 20px}
 .email{font-size:1.25rem;font-weight:700}
 footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--muted);font-size:.88rem}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero>div>*,.hero .photo{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.hero>div>:nth-child(1){animation-delay:.05s}.hero>div>:nth-child(2){animation-delay:.15s}.hero>div>:nth-child(3){animation-delay:.25s}.hero>div>:nth-child(4){animation-delay:.35s}.hero .photo{animation-delay:.2s}
+.shot{transition:opacity .6s ease,transform .4s ease,box-shadow .3s ease}
+.shot:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(21,32,43,.14)}
+.js .shot{opacity:0;transform:translateY(18px)}
+.js .shot.in{opacity:1;transform:none}
+.js .shot.in:hover{transform:translateY(-4px)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .shot{opacity:1;transform:none}}
 @media(max-width:760px){
 .hero{grid-template-columns:1fr;gap:34px;padding:44px 0}
 .photo{max-width:300px}
 .item,.role{grid-template-columns:1fr}
 .about,.skills{grid-template-columns:1fr}
-nav{gap:16px}
+nav{gap:16px}.cols{grid-template-columns:1fr}.shot.phone{justify-self:start}
 }
 </style>
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
 <header><div class="wrap bar"><a class="name" href="#top">Satkriti Bhandari</a><nav aria-label="Main"><a href="#work">Work</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav></div></header>
@@ -90,6 +100,7 @@ nav{gap:16px}
   <article class="item featured">
    <div class="meta"><strong>Internship, 2026</strong>Live website</div>
    <div>
+    <a class="shot" href="https://leoclubofchautaripokhara.com/" target="_blank" rel="noopener noreferrer"><img src="leo-club.webp" alt="Home page of the Leo Club of Chautari Pokhara website, showing the club members at their 6th Charter Night" width="1400" height="658"></a>
     <h3>Leo Club of Chautari Pokhara website</h3>
     <p>The public website for a youth service club in Pokhara, with pages for events, the team, a photo gallery, news and membership applications. Built with a Next.js frontend and a Django backend that the club's committee can manage.</p>
     <div class="stack">Next.js, React, Django, REST APIs</div>
@@ -100,16 +111,19 @@ nav{gap:16px}
   <article class="item">
    <div class="meta"><strong>Internship, 2026</strong>Mobile app</div>
    <div>
+    <div class="cols"><div>
     <h3>Office Management System, mobile app</h3>
     <p>I built the Flutter mobile app for the company's office management system. It connects to the Django backend the team had already built, so the work was reading the existing API, handling login and tokens, and turning the data into screens.</p>
     <div class="stack">Flutter, Dart, REST API integration</div>
     <div class="links"><a href="https://github.com/Neptechpal-pvt-ltd" target="_blank" rel="noopener noreferrer">Nep Tech Pal on GitHub</a></div>
+    </div><figure class="shot phone"><img src="oms-app.webp" alt="Sign-in screen of the Office Management System mobile app built with Flutter" width="323" height="660" loading="lazy"></figure></div>
    </div>
   </article>
 
   <article class="item">
    <div class="meta"><strong>Personal project</strong>Backend finished, app in progress</div>
    <div>
+    <figure class="shot"><img src="restaurant-api.webp" alt="Swagger documentation of the Restaurant Ordering API, showing the auth and cart endpoints" width="1400" height="826" loading="lazy"></figure>
     <h3>Restaurant Ordering System</h3>
     <p>A single-restaurant ordering app. The Django backend is done and tested through Swagger: JWT login with customer, staff and owner roles, a menu with Cloudinary images, a cart, and orders that are saved in one database transaction with the total worked out on the server. Staff move orders through a fixed set of statuses, and customers pay by cash on delivery or eSewa (test mode), which the server checks with eSewa before marking an order paid.</p>
     <p class="note">Still to do: the Flutter app, automated tests, and Khalti payments.</p>
@@ -131,20 +145,23 @@ nav{gap:16px}
   <article class="item">
    <div class="meta"><strong>University project</strong>Team project</div>
    <div>
+    <figure class="shot"><img src="skillsync-ai.webp" alt="Home page of SkillSync AI with a quick job search form" width="1400" height="664" loading="lazy"></figure>
     <h3>SkillSync AI</h3>
-    <p>A team project that reads the information in a CV and uses NLP to point out skill gaps and suggest relevant jobs.</p>
-    <div class="stack">Django, NLP</div>
+    <p>A team project that helps a candidate see where they fall short of real job requirements. It parses a CV, generates an ATS-friendly CV from a structured profile, finds skill gaps by comparing skills with sentence embeddings and FAISS similarity search, and recommends jobs scored against the candidate's skills.</p>
+    <div class="stack">Django, Django REST Framework, FastAPI, Sentence Transformers, FAISS, Gemini API</div>
     <div class="links"><a href="https://github.com/sabinaadhikari99/Project-II" target="_blank" rel="noopener noreferrer">Project repository</a></div>
    </div>
   </article>
 
   <article class="item">
-   <div class="meta"><strong>College project</strong>Mobile app</div>
+   <div class="meta"><strong>College project</strong>First mobile app</div>
    <div>
+    <div class="cols"><div>
     <h3>Expense Tracker</h3>
-    <p>A Flutter app for recording and keeping track of expenses. Data is saved on the phone using Hive, so it works without an internet connection.</p>
+    <p>My first college project: a Flutter app with sign up, login, a home page and logout. Accounts are stored on the phone using Hive, so they stay after the app is closed, and the screens use gradients and rounded form cards.</p>
     <div class="stack">Flutter, Dart, Hive</div>
     <div class="links"><a href="https://github.com/bhandarisatkriti/Expense-Tracker" target="_blank" rel="noopener noreferrer">Source code</a></div>
+    </div><figure class="shot phone"><img src="expense-tracker.webp" alt="Login screen of the Expense Tracker Flutter app on a purple gradient background" width="496" height="807" loading="lazy"></figure></div>
    </div>
   </article>
  </div>
@@ -166,7 +183,7 @@ nav{gap:16px}
 <section><div class="wrap">
  <h2>Tools I use</h2>
  <div class="skills" style="margin-top:22px">
-  <div><h3>Backend</h3><p>Python, Django, Django REST Framework, JWT authentication, serializers, permissions, Celery and Redis.</p></div>
+  <div><h3>Backend</h3><p>Python, Django, Django REST Framework, FastAPI, JWT authentication, serializers, permissions, Celery and Redis.</p></div>
   <div><h3>Data</h3><p>PostgreSQL, SQLite, relational data modelling, database transactions.</p></div>
   <div><h3>Apps and tools</h3><p>Flutter and Dart (Hive for local storage), Next.js and React, HTML and CSS, Git and GitHub, Postman, Swagger, Docker.</p></div>
  </div>
@@ -184,9 +201,13 @@ nav{gap:16px}
  <h2>Get in touch</h2>
  <p>I'm looking for an internship or junior role in backend or full-stack development. Email is the quickest way to reach me.</p>
  <a class="email" href="mailto:satkriti32@gmail.com">satkriti32@gmail.com</a>
- <p style="margin-top:14px"><a href="Satkriti-Bhandari-CV.pdf" download>Download my CV</a> &nbsp;&nbsp; <a href="https://github.com/bhandarisatkriti" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+ <p style="margin-top:14px"><a href="Satkriti-Bhandari-CV.pdf" download>Download my CV</a> &nbsp;&nbsp; <a href="https://github.com/bhandarisatkriti" target="_blank" rel="noopener noreferrer">GitHub</a> &nbsp;&nbsp; <a href="https://www.linkedin.com/in/satkriti-bhandari-59084330a/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
 </div></section>
 </main>
 <footer><div class="wrap">Satkriti Bhandari, Pokhara, Nepal. 2026.</div></footer>
+<script>
+const shots=document.querySelectorAll('.shot');
+if('IntersectionObserver' in window){const io=new IntersectionObserver((entries,o)=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.15});shots.forEach(el=>io.observe(el))}else shots.forEach(el=>el.classList.add('in'));
+</script>
 </body>
 </html>
