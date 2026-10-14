@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="theme-color" content="#0a1226">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Satkriti Bhandari, software engineering student and backend developer from Pokhara, Nepal. Django REST APIs, Next.js and Flutter.">
 <title>Satkriti Bhandari | Backend Developer, Pokhara</title>
@@ -9,73 +10,83 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f5f7fa;--card:#fff;--ink:#15202b;--muted:#586470;--line:#d9e0e7;--blue:#1f4fd8;--soft:#e8eefc;--font:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif}
+:root{--bg:#0a1226;--card:#111d3a;--ink:#eaf0fb;--muted:#a3b1cd;--line:#233358;--blue:#7db4ff;--soft:#16264d;--gold:#f5b73b;--font:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:20px}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 var(--font)}
+html{scroll-behavior:smooth;scroll-padding-top:76px;background:var(--bg)}
+body{margin:0;color:var(--ink);font:17px/1.65 var(--font);background:radial-gradient(1000px 520px at 88% -4%,#214aa6 0,transparent 62%),radial-gradient(700px 420px at -5% 38%,#13307a55 0,transparent 70%),var(--bg)}
 a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:3px}
 a:hover{text-decoration-thickness:2px}
-a:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:3px}
-.wrap{width:min(960px,calc(100% - 40px));margin:0 auto}
-header{padding:22px 0;border-bottom:1px solid var(--line)}
+a:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:3px}
+.wrap{width:min(1240px,calc(100% - 56px));margin:0 auto}
+header{position:sticky;top:0;z-index:5;padding:16px 0;background:rgba(10,18,38,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .bar{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
 .name{font-weight:800;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
-nav{display:flex;gap:22px;font-size:.95rem}
+nav{display:flex;gap:24px;font-size:.95rem}
 nav a{color:var(--muted);text-decoration:none}
-nav a:hover{color:var(--ink);text-decoration:underline}
-.hero{display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:center;padding:72px 0 64px}
-h1{font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.02;letter-spacing:-.045em;margin:0 0 22px;font-weight:800}
-.lead{font-size:1.2rem;max-width:34em;margin:0 0 14px}
-.sub{color:var(--muted);max-width:34em;margin:0 0 28px}
+nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:center;padding:84px 0 76px}
+h1{font-size:clamp(2.7rem,6vw,4.9rem);line-height:1.02;letter-spacing:-.045em;margin:0 0 24px;font-weight:800}
+.lead{font-size:1.25rem;max-width:34em;margin:0 0 14px}
+.sub{color:var(--muted);max-width:34em;margin:0 0 30px}
 .actions{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:700;font-size:.95rem;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink)}
-.btn.primary{background:var(--ink);color:#fff}
-.btn:hover{background:var(--blue);border-color:var(--blue);color:#fff}
-.photo img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center 30%;border-radius:10px;border:1px solid var(--line)}
-.photo p{margin:10px 2px 0;font-size:.85rem;color:var(--muted)}
-section{padding:56px 0;border-top:1px solid var(--line)}
-h2{font-size:clamp(1.7rem,3.4vw,2.3rem);letter-spacing:-.035em;line-height:1.15;margin:0 0 10px}
-.intro{color:var(--muted);max-width:36em;margin:0 0 34px}
-.work{border-top:1px solid var(--ink)}
-.item{display:grid;grid-template-columns:200px 1fr;gap:12px 36px;padding:28px 0;border-bottom:1px solid var(--line)}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:700;font-size:.95rem;text-decoration:none;border:1.5px solid var(--blue);color:var(--ink);transition:background .2s,color .2s,border-color .2s}
+.btn.primary{background:var(--gold);border-color:var(--gold);color:#0a1226}
+.btn:hover{background:var(--blue);border-color:var(--blue);color:#0a1226}
+.photo img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center 30%;border-radius:14px;border:1px solid #2c4178;box-shadow:0 0 0 7px rgba(125,180,255,.1),0 24px 50px rgba(0,0,0,.45)}
+.photo p{margin:14px 2px 0;font-size:.88rem;color:var(--muted)}
+section{padding:68px 0;border-top:1px solid var(--line)}
+#about,#experience{background:rgba(17,29,58,.55)}
+h2{font-size:clamp(1.8rem,3.4vw,2.5rem);letter-spacing:-.035em;line-height:1.15;margin:0 0 10px}
+.intro{color:var(--muted);max-width:36em;margin:0 0 36px}
+.work{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 22px;scrollbar-color:var(--blue) var(--card)}
+.item{flex:0 0 min(430px,86vw);scroll-snap-align:start;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;padding-bottom:22px}
 .meta{font-size:.9rem;color:var(--muted)}
 .meta strong{display:block;color:var(--ink);font-weight:700}
-.item h3{margin:0 0 8px;font-size:1.3rem;letter-spacing:-.02em;line-height:1.25}
+.item h3{margin:0 0 8px;font-size:1.4rem;letter-spacing:-.02em;line-height:1.25}
 .item p{margin:0 0 12px;max-width:40em}
 .stack{font-size:.9rem;color:var(--muted)}
-.links{margin-top:10px;display:flex;gap:18px;flex-wrap:wrap;font-weight:700;font-size:.95rem}
-.note{background:var(--soft);border-radius:8px;padding:12px 15px;font-size:.93rem;margin:0 0 12px;max-width:40em}
-.featured h3{font-size:1.5rem}.shot{display:block;margin:0 0 20px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 10px 30px rgba(21,32,43,.09)}.shot img{display:block;width:100%;height:auto}.shot.phone{margin:0;max-width:230px;justify-self:end}.cols{display:grid;grid-template-columns:1fr 230px;gap:30px;align-items:start}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.about p{margin:0 0 14px}
-.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.skills h3{font-size:1rem;margin:0 0 8px}
+.links{margin-top:12px;display:flex;gap:20px;flex-wrap:wrap;font-weight:700;font-size:.95rem}
+.note{background:var(--soft);border-left:3px solid var(--gold);border-radius:6px;padding:12px 15px;font-size:.93rem;margin:0 0 12px;max-width:40em;color:#d6e3ff}
+.featured h3{font-size:1.65rem}
+.shot{display:block;margin:0 0 20px;border:1px solid #2c4178;border-radius:12px;overflow:hidden;background:#0e1a38;box-shadow:0 14px 36px rgba(0,0,0,.4);transition:opacity .6s ease,transform .4s ease,box-shadow .3s ease}
+.shot img{display:block;width:100%;height:auto}
+.shot:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(0,0,0,.5)}
+.cols{display:contents}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.about p{margin:0 0 14px;max-width:38em}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.skills>div{border-top:2px solid var(--blue);padding-top:16px}
+.skills h3{font-size:1.05rem;margin:0 0 8px}
 .skills p{margin:0;color:var(--muted);font-size:.97rem}
-.role{display:grid;grid-template-columns:200px 1fr;gap:8px 36px;padding:24px 0;border-bottom:1px solid var(--line)}
-.role h3{margin:0;font-size:1.15rem}
+.role{display:grid;grid-template-columns:190px 1fr;gap:8px 40px;padding:26px 0;border-bottom:1px solid var(--line)}
+.role h3{margin:0;font-size:1.2rem}
 .role .where{color:var(--muted);margin:0 0 8px;font-size:.95rem}
-.role p{margin:0;max-width:40em}
-.contact{padding:64px 0}
-.contact h2{font-size:clamp(2rem,4.5vw,3rem)}
-.contact p{max-width:34em;margin:0 0 20px}
-.email{font-size:1.25rem;font-weight:700}
-footer{border-top:1px solid var(--line);padding:22px 0 34px;color:var(--muted);font-size:.88rem}
+.role p{margin:0;max-width:42em}
+.contact{padding:72px 0}
+.contact .wrap{background:linear-gradient(135deg,#1c3f9c,#0f2a66);border:1px solid #2f4f9f;border-radius:20px;padding:clamp(28px,5vw,56px)}
+.contact h2{font-size:clamp(2rem,4.5vw,3.2rem)}
+.contact p{max-width:34em;margin:0 0 20px;color:#d6e3ff}
+.contact a{color:#fff}
+.email{font-size:1.3rem;font-weight:700;color:var(--gold)!important}
+footer{border-top:1px solid var(--line);padding:24px 0 36px;color:var(--muted);font-size:.88rem}
+.item>div:last-child,.cols>div{display:contents}
+.item .shot{order:0;height:240px;margin:0 0 18px;border:0;border-radius:0;box-shadow:none}
+.item .shot img{height:100%;object-fit:cover;object-position:top}
+.item>.meta{order:1;padding:0 22px 8px}
+.item>div:last-child>:not(.shot),.cols>div>*{order:2;margin-left:22px;margin-right:22px}
+.links{margin-top:auto!important;padding-top:14px}
+.pager{display:flex;gap:10px;margin:-10px 0 20px}
+.pager button{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--blue);background:transparent;color:var(--ink);font:700 1.15rem var(--font);cursor:pointer;transition:background .2s,color .2s}
+.pager button:hover{background:var(--blue);color:#0a1226}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .hero>div>*,.hero .photo{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
 .hero>div>:nth-child(1){animation-delay:.05s}.hero>div>:nth-child(2){animation-delay:.15s}.hero>div>:nth-child(3){animation-delay:.25s}.hero>div>:nth-child(4){animation-delay:.35s}.hero .photo{animation-delay:.2s}
-.shot{transition:opacity .6s ease,transform .4s ease,box-shadow .3s ease}
-.shot:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(21,32,43,.14)}
 .js .shot{opacity:0;transform:translateY(18px)}
 .js .shot.in{opacity:1;transform:none}
 .js .shot.in:hover{transform:translateY(-4px)}
+@media(max-width:900px){.hero{grid-template-columns:1fr;gap:36px;padding:48px 0}.photo{max-width:320px}.role{grid-template-columns:1fr}.about,.skills{grid-template-columns:1fr}nav{gap:16px}}
+.item .shot:hover,.js .item .shot.in:hover{transform:none;box-shadow:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .shot{opacity:1;transform:none}}
-@media(max-width:760px){
-.hero{grid-template-columns:1fr;gap:34px;padding:44px 0}
-.photo{max-width:300px}
-.item,.role{grid-template-columns:1fr}
-.about,.skills{grid-template-columns:1fr}
-nav{gap:16px}.cols{grid-template-columns:1fr}.shot.phone{justify-self:start}
-}
 </style>
 <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -95,6 +106,7 @@ nav{gap:16px}.cols{grid-template-columns:1fr}.shot.phone{justify-self:start}
 <section id="work"><div class="wrap">
  <h2>Work</h2>
  <p class="intro">Internship projects first, then what I'm building on my own. Each one says how far along it is.</p>
+ <div class="pager"><button id="prev" type="button" aria-label="Previous projects">&larr;</button><button id="next" type="button" aria-label="Next projects">&rarr;</button></div>
  <div class="work">
 
   <article class="item featured">
@@ -191,7 +203,7 @@ nav{gap:16px}.cols{grid-template-columns:1fr}.shot.phone{justify-self:start}
 
 <section id="experience"><div class="wrap">
  <h2>Experience and education</h2>
- <div style="margin-top:22px;border-top:1px solid var(--ink)">
+ <div style="margin-top:22px;border-top:2px solid var(--gold)">
   <div class="role"><div class="meta">May to August 2026</div><div><h3>Backend Development Intern</h3><p class="where">Nep Tech Pal Pvt. Ltd., Pokhara</p><p>Worked on Django REST APIs, helped build the Leo Club of Chautari Pokhara website with Next.js and Django, and built the Flutter mobile app for the office management system. Tested endpoints and connected API responses to app screens.</p></div></div>
   <div class="role"><div class="meta">Currently studying</div><div><h3>Software Engineering</h3><p class="where">Pokhara University</p><p>Degree coursework, with internship work and personal projects as practice.</p></div></div>
  </div>
@@ -208,6 +220,9 @@ nav{gap:16px}.cols{grid-template-columns:1fr}.shot.phone{justify-self:start}
 <script>
 const shots=document.querySelectorAll('.shot');
 if('IntersectionObserver' in window){const io=new IntersectionObserver((entries,o)=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.15});shots.forEach(el=>io.observe(el))}else shots.forEach(el=>el.classList.add('in'));
+const row=document.querySelector('.work');
+document.getElementById('prev').onclick=()=>row.scrollBy({left:-450,behavior:'smooth'});
+document.getElementById('next').onclick=()=>row.scrollBy({left:450,behavior:'smooth'});
 </script>
 </body>
 </html>
